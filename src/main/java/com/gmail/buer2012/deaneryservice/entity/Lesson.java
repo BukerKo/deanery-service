@@ -1,0 +1,30 @@
+package com.gmail.buer2012.deaneryservice.entity;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Data
+@NoArgsConstructor
+public class Lesson {
+    
+    @Id
+    @GeneratedValue
+    private Long id;
+    
+    @Column
+    private String name;
+    
+    @OneToOne
+    @JoinColumn(name = "tutor_id", referencedColumnName = "id")
+    private Tutor tutor;
+    
+    @ManyToMany
+    private List<Student> students;
+    
+    @OneToMany
+    private List<Mark> marks;
+}
