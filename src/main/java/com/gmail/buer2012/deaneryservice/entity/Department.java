@@ -11,18 +11,15 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-public class Cathedra {
+public class Department {
     
     @Id
-    @Generated
+    @GeneratedValue
     private Long id;
 
     @Column
-    String name;
-    
-    @OneToMany(cascade = CascadeType.ALL)
-    List<Student> students;
-    
-    @OneToMany(cascade = CascadeType.ALL)
-    List<Tutor> tutors;
+    private String name;
+
+    @OneToMany(mappedBy = "department")
+    private List<Group> classes;
 }

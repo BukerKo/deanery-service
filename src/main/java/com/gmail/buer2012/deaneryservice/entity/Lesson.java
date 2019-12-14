@@ -19,12 +19,8 @@ public class Lesson {
     private String name;
     
     @OneToOne
-    @JoinColumn(name = "tutor_id", referencedColumnName = "id")
     private Tutor tutor;
     
     @ManyToMany
     private List<Student> students;
-    
-    @OneToMany
-    private List<Mark> marks;
 }

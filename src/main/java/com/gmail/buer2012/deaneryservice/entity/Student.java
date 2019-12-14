@@ -6,24 +6,26 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.List;
 
+@Entity
 @Data
 @NoArgsConstructor
 public class Student {
     
     @Id
     @GeneratedValue
-    Long id;
+    private Long id;
     
     @Column
-    String firstName;
+    private String firstName;
     
     @Column
-    String lastName;
+    private String lastName;
     
     @Column
-    Integer age = 18;
+    private String birthDate;
 
-    @ManyToMany
-    private List<Mark> marks;
+    @ManyToOne
+    @JoinColumn(name="group_id")
+    private Group group;
 
 }

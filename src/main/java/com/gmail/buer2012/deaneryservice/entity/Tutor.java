@@ -3,11 +3,9 @@ package com.gmail.buer2012.deaneryservice.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+@Entity
 @Data
 @NoArgsConstructor
 public class Tutor {
@@ -22,8 +20,5 @@ public class Tutor {
     private String lastName;
     
     @Column
-    private Integer age;
-    
-    @OneToOne(mappedBy = "tutor")
-    private Lesson lesson;
+    private String degree;
 }

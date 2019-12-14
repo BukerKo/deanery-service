@@ -1,14 +1,12 @@
 package com.gmail.buer2012.deaneryservice.entity;
 
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "class")
 @Data
 @NoArgsConstructor
 public class Group {
@@ -19,7 +17,11 @@ public class Group {
     
     @Column
     private String name;
-    
-    @OneToMany(cascade = CascadeType.ALL)
+
+    @ManyToOne
+    @JoinColumn(name="department_id")
+    private Department department;
+
+    @OneToMany(mappedBy = "group")
     private List<Student> students;
 }
