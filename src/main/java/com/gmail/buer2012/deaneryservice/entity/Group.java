@@ -13,7 +13,7 @@ public class Group {
     
     @Id
     @GeneratedValue
-    private Long Id;
+    private Long id;
     
     @Column
     private String name;

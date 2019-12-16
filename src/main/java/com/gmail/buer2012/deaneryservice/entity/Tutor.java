@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class Tutor {
     @Id
     @GeneratedValue
-    private Long Id;
+    private Long id;
     
     @Column
     private String firstName;
