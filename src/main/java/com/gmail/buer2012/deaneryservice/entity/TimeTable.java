@@ -4,24 +4,25 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import java.time.DayOfWeek;
 
 @Entity
 @Data
 @NoArgsConstructor
-public class Deanery {
+public class TimeTable {
     
     @Id
     @GeneratedValue
-    private Long id;
+    private Long Id;
     
     @Column
-    private String name;
-    
+    private DayOfWeek dayOfWeek;
+
     @Column
-    private String deanName;
+    private String content;
     
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Department> departments;
+    @OneToOne
+    private Group group;
+    
     
 }
