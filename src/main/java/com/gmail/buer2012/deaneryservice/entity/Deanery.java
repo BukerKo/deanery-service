@@ -13,7 +13,7 @@ public class Deanery {
     
     @Id
     @GeneratedValue
-    private Long id;
+    private Long Id;
     
     @Column
     private String name;

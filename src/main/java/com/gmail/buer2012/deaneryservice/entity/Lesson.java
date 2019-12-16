@@ -13,7 +13,7 @@ public class Lesson {
     
     @Id
     @GeneratedValue
-    private Long id;
+    private Long Id;
     
     @Column
     private String name;
