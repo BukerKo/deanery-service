@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.DayOfWeek;
+import java.util.List;
 
 @Entity
 @Data
@@ -23,6 +24,9 @@ public class TimeTable {
     
     @OneToOne
     private Group group;
+    
+    @OneToOne
+    private Tutor tutor;
     
     
 }
